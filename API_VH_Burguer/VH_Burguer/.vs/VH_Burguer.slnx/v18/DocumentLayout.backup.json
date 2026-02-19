@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\applications\\autenticacao\\geradortokenjwt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|solutionrelative:applications\\autenticacao\\geradortokenjwt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\controllers\\autenticacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|solutionrelative:controllers\\autenticacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|solutionrelative:controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\applications\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|solutionrelative:applications\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\dtos\\autenticacaodto\\tokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|solutionrelative:dtos\\autenticacaodto\\tokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\dtos\\autenticacaodto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|solutionrelative:dtos\\autenticacaodto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5A358AEB-75CA-515E-7110-B1B27EA744D6}|VH_Burguer.csproj|c:\\users\\54568719801\\desktop\\vh_burguer\\api_vh_burguer\\vh_burguer\\applications\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,24 +46,111 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAABcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T13:16:03.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AutenticacaoController.cs",
+              "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Controllers\\AutenticacaoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AutenticacaoController.cs",
+              "ToolTip": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Controllers\\AutenticacaoController.cs",
+              "RelativeToolTip": "Controllers\\AutenticacaoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T13:08:41.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AutenticacaoService.cs",
+              "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Applications\\Services\\AutenticacaoService.cs",
+              "RelativeDocumentMoniker": "Applications\\Services\\AutenticacaoService.cs",
+              "ToolTip": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Applications\\Services\\AutenticacaoService.cs",
+              "RelativeToolTip": "Applications\\Services\\AutenticacaoService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAiwDEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T12:21:20.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-19T12:14:08.225Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GeradorTokenJwt.cs",
+              "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Applications\\Autenticacao\\GeradorTokenJwt.cs",
+              "RelativeDocumentMoniker": "Applications\\Autenticacao\\GeradorTokenJwt.cs",
+              "ToolTip": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Applications\\Autenticacao\\GeradorTokenJwt.cs",
+              "RelativeToolTip": "Applications\\Autenticacao\\GeradorTokenJwt.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAAEsAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T11:37:44.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TokenDto.cs",
+              "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\DTOs\\AutenticacaoDto\\TokenDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\AutenticacaoDto\\TokenDto.cs",
+              "ToolTip": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\DTOs\\AutenticacaoDto\\TokenDto.cs",
+              "RelativeToolTip": "DTOs\\AutenticacaoDto\\TokenDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T11:27:45.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\DTOs\\AutenticacaoDto\\LoginDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\AutenticacaoDto\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\DTOs\\AutenticacaoDto\\LoginDto.cs",
+              "RelativeToolTip": "DTOs\\AutenticacaoDto\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T11:25:02.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ProdutoController.cs",
               "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Controllers\\ProdutoController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProdutoController.cs",
               "ToolTip": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Controllers\\ProdutoController.cs",
               "RelativeToolTip": "Controllers\\ProdutoController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAywB8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAqwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T13:29:02.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "ProdutoService.cs",
               "DocumentMoniker": "C:\\Users\\54568719801\\Desktop\\VH_Burguer\\API_VH_Burguer\\VH_Burguer\\Applications\\Services\\ProdutoService.cs",
               "RelativeDocumentMoniker": "Applications\\Services\\ProdutoService.cs",

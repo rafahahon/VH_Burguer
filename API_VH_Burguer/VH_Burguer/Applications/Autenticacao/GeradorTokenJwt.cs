@@ -45,10 +45,10 @@ namespace VH_Burguer.Applications.Autenticacao
             }
 
             // Cria a chave de segurança usada para assinar o token
-            var security = new SymmetricSecurityKey(keyBytes);
+            var securityKey = new SymmetricSecurityKey(KeyBytes);
 
              // define o algoritmo de assinatura do token
-             var credentials = new SigningCredentials(securityKey, securityAlgorithms.HmaSha256);
+             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             // Claims -> Informacoes do usuario que vao dentro do token 
             // essas informacoes podem ser recuperadas na API para identificar quem esta logado
