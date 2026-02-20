@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using VH_Burguer.Applications.Services;
@@ -20,11 +21,14 @@ namespace VH_Burguer.Controllers
 
         // autenticacao do usuario
 
-        public int ObterUsuarioIdLogado()
+        private int ObterUsuarioIdLogado()
         {
             // busca no token/claims o valor armazenado como id do usuario
             // ClaimTypes.NameIdentifier geralmente guarda o ID do usuario no JWT
             string? idTexto = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            //Console.WriteLine(idTexto);
+            //Console.WriteLine("banana");
 
             if (string.IsNullOrWhiteSpace(idTexto))
             {
@@ -76,6 +80,61 @@ namespace VH_Burguer.Controllers
             catch (DomainException ex)
             {
                 return NotFound(ex.Message); // NotFound -> Não encontrado
+            }
+        }
+
+        [HttpPost] // adicionar o produto
+        // indica que recebe dados no formato multipart/form-data
+        // necessario quando enviamos arquivos (exemplo: imagem do produto)
+        [Consumes("multipart/form-data")]
+        [Authorize] // exige o login
+
+        // [FromForm] -> diz que os dados vem do formulario da requisicao (multipart/form-data)
+        public ActionResult Adicionar([FromForm] CriarProdutoDto produtoDto)
+        {
+            try
+            {
+                int usuarioId = ObterUsuarioIdLogado();
+
+                // cadastro fica associado ao usuario logado
+                _service.Adicionar(produtoDto, usuarioId);
+
+                return StatusCode(201); // Created
+            }
+            catch (DomainException ex)
+            {
+                return BadRequest(ex.Message); 
+            }
+        }
+
+        [HttpPut("{id}")]
+        [Consumes("multipart/form-data")]
+        [Authorize] // exige o login
+        public ActionResult Atualizar(int id, [FromForm] AtualizarProdutoDto produtoDto)
+        {
+            try
+            {
+                _service.Atualizar(id, produtoDto);
+                return NoContent();
+            }
+            catch (DomainException ex)
+            {
+                return BadRequest(ex.Message); 
+            }
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize] // exige o login
+        public ActionResult Remover(int id)
+        {
+            try
+            {
+                _service.Remover(id);
+                return NoContent();
+            }
+            catch (DomainException ex)
+            {
+                return BadRequest(ex.Message); 
             }
         }
     }
