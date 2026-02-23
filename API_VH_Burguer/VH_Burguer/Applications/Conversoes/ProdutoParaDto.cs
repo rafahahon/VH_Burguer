@@ -5,7 +5,7 @@ namespace VH_Burguer.Applications.Conversoes
 {
     public class ProdutoParaDto
     {
-        public static LerProdutoDto ConverterParaDto(Produto produto)
+        public static LerProdutoDto ConverterParaDto(Produto produto) // Vai apenas mostrar essas informações listadas
         {
             return new LerProdutoDto
             {
@@ -15,14 +15,15 @@ namespace VH_Burguer.Applications.Conversoes
                 Descricao = produto.Descricao,
                 StatusProduto = produto.StatusProduto,
 
-                CategoriasIds = produto.Categoria.Select(categoria => categoria.CategoriaID).ToList(), // lista as categorias (pelo id) do produto que chamarmos
+                CategoriasIds = produto.Categoria.Select(categoria => categoria.CategoriaID).ToList(),
 
                 Categorias = produto.Categoria.Select(categoria => categoria.Nome).ToList(),
 
                 UsuarioID = produto.UsuarioID,
-                UsuarioNome = produto.Usuario.Nome,
-                UsuarioEmail = produto.Usuario.Email
+                UsuarioNome = produto.Usuario?.Nome,
+                UsuarioEmail = produto.Usuario?.Email
             };
+
         }
     }
 }

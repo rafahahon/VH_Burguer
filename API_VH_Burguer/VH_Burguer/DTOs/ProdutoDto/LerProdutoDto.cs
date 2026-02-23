@@ -19,7 +19,7 @@
         // usuario que cadastrou
 
         public int? UsuarioID { get; set; }
-        public string UsuarioNome { get; set; }
+        public string? UsuarioNome { get; set; }
         public string? UsuarioEmail { get; set; }
     }
 }

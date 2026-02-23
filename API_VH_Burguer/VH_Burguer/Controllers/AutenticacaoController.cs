@@ -17,7 +17,7 @@ namespace VH_Burguer.Controllers
             _service = service;
         }
 
-        [HttpPost("login")] // envio de dados
+        [HttpPost("Login")]
         public ActionResult<TokenDto> Login(LoginDto loginDto)
         {
             try
@@ -31,5 +31,6 @@ namespace VH_Burguer.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
     }
 }
