@@ -1,0 +1,86 @@
+﻿using VH_Burguer.Applications.Regras;
+using VH_Burguer.Domains;
+using VH_Burguer.DTOs.PromocaoDto;
+using VH_Burguer.Exceptions;
+using VH_Burguer.Interfaces;
+
+namespace VH_Burguer.Applications.Services
+{
+    public class PromocaoService
+    {
+        private readonly IPromocaoRepository _repository;
+
+        public PromocaoService(IPromocaoRepository repository)
+        {
+            _repository = repository;
+        }
+
+        public List<LerPromocaoDto> Listar()
+        {
+            List<Promocao> promocoes = _repository.Listar();
+
+            List<LerPromocaoDto> promocoesDto = promocoes.Select(promocao => new LerPromocaoDto()
+            {
+                PromocaoID = promocao.PromocaoID,
+                Nome = promocao.Nome,
+                DataExpiracao = promocao.DataExpiracao,
+                StatusPromocao = promocao.StatusPromocao
+            }).ToList();
+
+            return promocoesDto;    
+        }
+
+        public LerPromocaoDto ObterPorId(int id)
+        {
+            Promocao promocao = _repository.ObterPorId(id);
+
+            if (promocao == null)
+            {
+                throw new DomainException("Promoção não encontrada.");
+            }
+
+            LerPromocaoDto promocaoDto = new LerPromocaoDto
+            {
+                PromocaoID = promocao.PromocaoID,
+                Nome = promocao.Nome,
+                DataExpiracao = promocao.DataExpiracao,
+                StatusPromocao = promocao.StatusPromocao
+            };
+
+            return promocaoDto;
+        }
+
+        private static void ValidarNome(string nome)
+        {
+            if(string.IsNullOrWhiteSpace(nome))
+            {
+                throw new DomainException("Nome é obrigatório.");
+            }
+        }
+
+        public void Adicionar(CriarPromocaoDto promocaoDto)
+        {
+            ValidarNome(promocaoDto.Nome);
+            ValidarDataExpiracaoPromocao.ValidarDataExpiracao(promocaoDto.DataExpiracao);
+
+            if(_repository.NomeExiste(promocaoDto.Nome))
+            {
+                throw new DomainException("Promoção já existente.");
+            }
+
+            Promocao promocao = new Promocao
+            {
+                Nome = promocaoDto.Nome,
+                DataExpiracao = promocaoDto.DataExpiracao,
+                StatusPromocao = promocaoDto.StatusPromocao
+            };
+
+            _repository.Adicionar(promocao);
+        }
+
+        //public void Atualizar()
+        //{
+
+        //}
+    }
+}
