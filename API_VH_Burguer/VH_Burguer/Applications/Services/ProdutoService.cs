@@ -66,7 +66,7 @@ namespace VH_Burguer.Applications.Services
 
             if(produtoDto.CategoriaIds == null || produtoDto.CategoriaIds.Count() == 0)
             {
-                throw new DomainException("Produto deve ter amo menos uma categoria.");
+                throw new DomainException("Produto deve ter ao menos uma categoria.");
             }
         }
 
