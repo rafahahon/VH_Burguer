@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using VH_Burguer.Applications.Services;
 using VH_Burguer.DTOs.ProdutoDto;
+using VH_Burguer.DTOs.PromocaoDto;
 using VH_Burguer.Exceptions;
 
 namespace VH_Burguer.Controllers
@@ -26,9 +27,6 @@ namespace VH_Burguer.Controllers
             // busca no token/claims o valor armazenado como id do usuario
             // ClaimTypes.NameIdentifier geralmente guarda o ID do usuario no JWT
             string? idTexto = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            //Console.WriteLine(idTexto);
-            //Console.WriteLine("banana");
 
             if (string.IsNullOrWhiteSpace(idTexto))
             {
@@ -53,15 +51,26 @@ namespace VH_Burguer.Controllers
         [HttpGet("{id}")]
         public ActionResult<LerProdutoDto> ObterPorId(int id)
         {
-            LerProdutoDto produto = _service.ObterPorId(id);
+            // assim nao deu certo
+            //LerProdutoDto produto = _service.ObterPorId(id);
 
-            if(produto == null)
+            //if (produto == null)
+            //{
+            //    // return StatusCode(404); 
+            //    return NotFound();
+            //}
+
+            //return Ok(produto);
+
+            try
             {
-                // return StatusCode(404); 
-                return NotFound();
+                LerProdutoDto produto = _service.ObterPorId(id);
+                return Ok(produto);
             }
-
-            return Ok(produto);
+            catch (DomainException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         // GET -> api/produto/5/imagem

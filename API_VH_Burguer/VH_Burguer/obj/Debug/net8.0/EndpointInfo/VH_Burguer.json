@@ -966,6 +966,9 @@
           "senha": {
             "type": "string",
             "nullable": true
+          },
+          "statusUsuario": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

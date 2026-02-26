@@ -45,6 +45,15 @@ namespace VH_Burguer.Applications.Services
         }
 
         // regras do sistema
+
+        private static void ValidarNome(string nome)
+        {
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                throw new DomainException("Nome é obrigatório.");
+            }
+        }
+
         private static void ValidarEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email) || !email.Contains("@"))
@@ -91,6 +100,7 @@ namespace VH_Burguer.Applications.Services
         public LerUsuarioDto Adicionar(CriarUsuarioDto usuarioDto)
         {
             ValidarEmail(usuarioDto.Email);
+            ValidarNome(usuarioDto.Nome);
 
             if(_repository.EmailExiste(usuarioDto.Email))
             {
@@ -115,6 +125,7 @@ namespace VH_Burguer.Applications.Services
         public LerUsuarioDto Atualizar(int id, CriarUsuarioDto usuarioDto)
         {
             ValidarEmail(usuarioDto.Email);
+            ValidarNome(usuarioDto.Nome);
 
             Usuario usuarioBanco = _repository.ObterPorId(id);
 
@@ -136,6 +147,7 @@ namespace VH_Burguer.Applications.Services
             usuarioBanco.Nome = usuarioDto.Nome;
             usuarioBanco.Email = usuarioDto.Email;
             usuarioBanco.Senha = HashSenha(usuarioDto.Senha);
+            usuarioBanco.StatusUsuario = usuarioDto.StatusUsuario;
 
             _repository.Atualizar(usuarioBanco);
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using VH_Burguer.Applications.Services;
+using VH_Burguer.DTOs.ProdutoDto;
 using VH_Burguer.DTOs.UsuarioDto;
 using VH_Burguer.Exceptions;
 
@@ -30,13 +31,23 @@ namespace VH_Burguer.Controllers
         [HttpGet("{id}")]
         public ActionResult<LerUsuarioDto> ObterPorId(int id)
         {
-            LerUsuarioDto usuario = _service.ObterPorId(id);
-            if (usuario == null)
-            {
-                return NotFound(); // NAO ENCONTRADO - StatusCode 404
-            }
+            //LerUsuarioDto usuario = _service.ObterPorId(id);
+            //if (usuario == null)
+            //{
+            //    return NotFound(); // NAO ENCONTRADO - StatusCode 404
+            //}
 
-            return Ok(usuario);
+            //return Ok(usuario);
+
+            try
+            {
+                LerUsuarioDto usuario = _service.ObterPorId(id);
+                return Ok(usuario);
+            }
+            catch (DomainException ex)
+            {
+                return NotFound(ex.Message);
+            }
 
         }
 
