@@ -5,11 +5,11 @@
 //{
 //    public class ValidarAutenticacao
 //    {
-//        public static void ValidarAutenticacao(LoginDto loginDto)
+//        public static void ValidarAutenticacao()
 //        {
-//            if (loginDto.)
-//                {
-//                }
+//            if ()
+//            {
+//            }
 //        }
 //    }
 //}

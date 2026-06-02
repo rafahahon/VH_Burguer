@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using VH_Burguer.Applications.Autenticacao;
+using VH_Burguer.Applications.ContentSafety;
 using VH_Burguer.Applications.Services;
 using VH_Burguer.Contexts;
 using VH_Burguer.Interfaces;
@@ -70,6 +71,9 @@ builder.Services.AddScoped<LogAlteracaoProdutoService>();
 builder.Services.AddScoped<GeradorTokenJwt>();
 builder.Services.AddScoped<AutenticacaoService>();
 
+// IA
+builder.Services.AddScoped<IContentSafetyRepository, ContentSafetyService>();
+
 // Configura o sistema de autenticação da aplicação.
 // Aqui estamos dizendo que o tipo de autenticação padrão será JWT Bearer.
 // Ou seja: a API vai esperar receber um Token JWT nas requisições.
@@ -124,6 +128,18 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+// Adiciona CORS -> libera a api para consumo
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -137,6 +153,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseCors("CorsPolicy");
 
 app.MapControllers();
 

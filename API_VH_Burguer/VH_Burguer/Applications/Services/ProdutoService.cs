@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
+using VH_Burguer.Applications.ContentSafety;
 using VH_Burguer.Applications.Conversoes;
 using VH_Burguer.Applications.Regras;
 using VH_Burguer.Domains;
@@ -12,11 +13,28 @@ namespace VH_Burguer.Applications.Services
     public class ProdutoService
     {
         private readonly IProdutoRepository _repository;
+        private readonly IContentSafetyRepository _contentSafety;
 
-        public ProdutoService(IProdutoRepository repository)
+        public ProdutoService(IProdutoRepository repository, IContentSafetyRepository contentySafety)
         {
             _repository = repository;
+            _contentSafety = contentySafety;
         }
+
+        private async Task ValidarConteudoProdutoAsync(string nome, string descricao)
+        {
+            string textoParaValidar = $@"
+                Nome do produto: {nome}
+                Descrição do produto: {descricao}";
+
+            var resultado = await _contentSafety.ValidarConteudo(textoParaValidar);
+
+            if (!resultado.aprovado)
+            {
+                throw new DomainException(resultado.msg);
+            }
+        }
+
 
         // Para cada produto que veio do banco, cria um DTO so com o que a requisicao/front precisa
         public List<LerProdutoDto> Listar()
@@ -82,9 +100,11 @@ namespace VH_Burguer.Applications.Services
             return imagem;
         }
 
-        public LerProdutoDto Adicionar(CriarProdutoDto produtoDto, int usuarioId)
+        public async Task<LerProdutoDto> Adicionar(CriarProdutoDto produtoDto, int usuarioId)
         {
             ValidarCadastro(produtoDto);
+
+            await ValidarConteudoProdutoAsync(produtoDto.Nome, produtoDto.Descricao);
 
             if(_repository.NomeExiste(produtoDto.Nome)) // confere se o nome do produto ja existe
             {
@@ -125,7 +145,7 @@ namespace VH_Burguer.Applications.Services
 
             if (produtoDto.CategoriaIds == null || produtoDto.CategoriaIds.Count() == 0)
             {
-                throw new DomainException("Produto deve ter amo menos uma categoria.");
+                throw new DomainException("Produto deve ter ao menos uma categoria.");
             }
 
             if(produtoDto.Preco < 0)

@@ -54,14 +54,24 @@ namespace VH_Burguer.Controllers
         [HttpGet("email/{email}")]
         public ActionResult<LerUsuarioDto> ObterPorEmail(string email)
         {
-            LerUsuarioDto usuario = _service.ObterPorEmail(email);
+            //LerUsuarioDto usuario = _service.ObterPorEmail(email);
 
-            if(usuario == null)
+            //if(usuario == null)
+            //{
+            //    return NotFound(); 
+            //}
+
+            //return Ok(usuario);
+
+            try
             {
-                return NotFound(); 
+                LerUsuarioDto usuario = _service.ObterPorEmail(email);
+                return Ok(usuario);
             }
-
-            return Ok(usuario);
+            catch (DomainException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         // POST - envia dados - nesse caso, cadastra o usuario
